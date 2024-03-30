@@ -13,3 +13,5 @@ fi
 invokeai-configure --root_dir ~/invokeai --yes --default_only --skip-sd-weights --no-full-precision
 
 rm -rf ~/.cache/huggingface/hub/*
+
+conda deactivate
