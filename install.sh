@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conda create -y -n invokeai python=3.11 glib=2.51.0
+conda create -y -n invokeai python=3.11
 
 eval "$(conda shell.bash hook)"
 conda activate invokeai
@@ -16,5 +16,6 @@ pip install "InvokeAI[xformers]" --use-pep517 --extra-index-url https://download
 python patch-16bit-model-download.py
 pip install pyngrok
 pip install opencv-python-headless
+conda install glib=2.51.0 -y
 
 conda deactivate
