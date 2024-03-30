@@ -19,7 +19,7 @@ def save_data(data):
         json.dump(data, file)
         
 def signal_handler(sig, frame):
-    print('You pressed Ctrl+C!')
+    print('Ctrl+C was pressed!')
     sys.exit(0)
 
 def main():
@@ -78,7 +78,7 @@ def main():
         subprocess.run(cmd, shell=True, env=env)
         signal.pause()
     else:
-        print('An Ngrok Authtoken is required. You can get one from https://ngrok.com.')
+        print('An Ngrok Authtoken is required. Get one from \"https://ngrok.com\".')
         
 if __name__ == '__main__':
     main()
