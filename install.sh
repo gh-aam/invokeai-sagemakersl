@@ -1,18 +1,20 @@
 #!/bin/bash
-conda create -y -n  invoke python=3.10
+
+conda create -y -n invokeai python=3.11 glib=2.51.0
+
 eval "$(conda shell.bash hook)"
-conda activate invoke
-mkdir -p /tmp/invoke/models
+conda activate invokeai
+
+mkdir -p /tmp/invokeai/models
 mkdir -p ~/invokeai
 if ! test -e ~/invokeai/models
 then
-  ln -s /tmp/invoke/models ~/invokeai/
+    ln -s /tmp/invokeai/models ~/invokeai/
 fi
 
-python --version
-pip install 'InvokeAI[xformers]' --use-pep517 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install "InvokeAI[xformers]" --use-pep517 --extra-index-url https://download.pytorch.org/whl/cu121
 python patch-16bit-model-download.py
 pip install pyngrok
 pip install opencv-python-headless
-conda install glib=2.51.0 -y
+
 conda deactivate
