@@ -22,8 +22,8 @@ pip install -e .[xformers] --use-pep517 --extra-index-url https://download.pytor
 
 cd $dir
 pip install pyngrok
-pip install opencv-python-headless
 python patch-16bit-model-download.py
+pip install pypatchmatch
 conda install glib -y
 
 conda deactivate
