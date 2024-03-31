@@ -1,4 +1,4 @@
-# InvokeAI on Sagemaker Studio Lab
+### InvokeAI on Sagemaker Studio Lab
 
 * **Install**
 ```
@@ -12,5 +12,5 @@ sh configure.sh
 
 * **Launch**
 ```
-sh start.sh
+sh invoke.sh
 ```
