@@ -11,10 +11,10 @@ fi
 
 if [ $# -eq 0 ]
 then
-    python start-ngrok.py  
+    python ngrok.py  
 elif [ $1 = "reset" ]
 then
-    python start-ngrok.py --reset 
+    python ngrok.py --reset 
 fi
 
 conda deactivate
