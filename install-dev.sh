@@ -21,8 +21,8 @@ cd InvokeAI
 pip install -e .[xformers] --use-pep517 --extra-index-url https://download.pytorch.org/whl/cu121
 
 cd $dir
-pip install pyngrok
 python patch-16bit-model-download.py
+pip install pyngrok
 pip install pypatchmatch
 conda install glib -y
 
