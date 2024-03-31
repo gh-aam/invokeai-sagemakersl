@@ -1,4 +1,4 @@
-### InvokeAI on Sagemaker Studio Lab
+## InvokeAI on Sagemaker Studio Lab
 
 * **Install**
 ```
