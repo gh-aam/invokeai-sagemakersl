@@ -69,7 +69,7 @@ def main():
     if args.token != '':
         ngrok.kill()
         srv = ngrok.connect(9090, pyngrok_config=conf.PyngrokConfig(auth_token=args.token), bind_tls=True, domain=args.domain).public_url
-        print(srv)
+        print(f'InvokeAI URL: {srv}')
     
         signal.signal(signal.SIGINT, signal_handler)
         print('Press Ctrl+C to exit!')
@@ -78,7 +78,7 @@ def main():
         subprocess.run(cmd, shell=True, env=env)
         signal.pause()
     else:
-        print('An Ngrok Authtoken is required. Get one from \"https://ngrok.com\".')
+        print('An Ngrok Authtoken is required. Get one from https://ngrok.com.')
         
 if __name__ == '__main__':
     main()
