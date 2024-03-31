@@ -1,4 +1,4 @@
-# InvokeAI on SMSL
+# [InvokeAI](https://github.com/invoke-ai/InvokeAI) on [SMSL](https://studiolab.sagemaker.aws)
 
 * **Install**
 ```
