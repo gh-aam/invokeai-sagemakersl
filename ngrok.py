@@ -48,9 +48,9 @@ def main():
         if saved_data and saved_data['token']:
             args.token = saved_data['token']
         else:
-            args.token = input('Enter Ngrok Authtoken: ')
+            args.token = input('Enter Ngrok token: ')
             if args.token == '':
-                args.token = input('Enter Ngrok Authtoken: ')
+                args.token = input('Enter Ngrok token: ')
             saved_data['token'] = args.token
 
     if args.domain is None:
@@ -58,18 +58,18 @@ def main():
         if saved_data and saved_data['domain']:
             args.domain = saved_data['domain']
         else:
-            args.domain = input('Enter Ngrok Domain: ')
+            args.domain = input('Enter Ngrok domain: ')
             saved_data['domain'] = args.domain
 
     save_data(saved_data)
 
-    print(f'Ngrok Authtoken: {args.token}')
-    print(f'Ngrok Domain: {args.domain}')
+    print(f'Token: {args.token}')
+    print(f'Domain: {args.domain}')
     
     if args.token != '':
         ngrok.kill()
         srv = ngrok.connect(9090, pyngrok_config=conf.PyngrokConfig(auth_token=args.token), bind_tls=True, domain=args.domain).public_url
-        print(f'InvokeAI URL: {srv}')
+        print(f'URL: {srv}')
     
         signal.signal(signal.SIGINT, signal_handler)
         print('Press Ctrl+C to exit!')
@@ -78,7 +78,7 @@ def main():
         subprocess.run(cmd, shell=True, env=env)
         signal.pause()
     else:
-        print('An Ngrok Authtoken is required. Get one from https://ngrok.com.')
+        print('Ngrok token is required. Get one from https://ngrok.com.')
         
 if __name__ == '__main__':
     main()
