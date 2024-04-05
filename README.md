@@ -12,5 +12,5 @@ sh configure.sh
 
 * **Launch**
 ```
-sh invoke.sh
+sh launch.sh
 ```
