@@ -19,7 +19,7 @@ def save_data(data):
         json.dump(data, file)
         
 def signal_handler(sig, frame):
-    print('Ctrl+C was pressed!')
+    print('\nCtrl+C was pressed!')
     sys.exit(0)
 
 def main():
