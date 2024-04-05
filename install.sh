@@ -15,6 +15,6 @@ fi
 pip install "InvokeAI[xformers]" --use-pep517 --extra-index-url https://download.pytorch.org/whl/cu121
 python patch-16bit-model-download.py
 pip install pyngrok
-conda install glib=2.51.0 -y
+conda install -y glib
 
 conda deactivate
