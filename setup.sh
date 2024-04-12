@@ -1,13 +1,12 @@
 #!/bin/bash
 
-export INVOKEAI_ROOT=~/invokeai
-mkdir $INVOKEAI_ROOT
+mkdir -p ~/invokeai
 
-cd $INVOKEAI_ROOT
+cd ~/invokeai
 conda create -p .venv python=3.11 glib
 
 eval "$(conda shell.bash hook)"
-conda activate $INVOKEAI_ROOT/.venv
+conda activate ~/invokeai/.venv
 python3 -m pip install --upgrade pip
 pip install InvokeAI --use-pep517
 pip install pyngrok
